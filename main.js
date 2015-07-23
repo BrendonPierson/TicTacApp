@@ -20,7 +20,7 @@ $('td').click(function(){
 })
 //add o class to td on doubl click 
 $('td').dblclick(function(){
-	$(this).addClass(' o');
+	$(this).addClass(' o').removeClass(' x');
 	checkForWin();
 })
 
@@ -43,8 +43,10 @@ function checkForWin(){
 		}
 		if (xCount === 3) {
 		alert('Player 1 Wins!');
+		location.reload();
 		} else if (yCount === 3) {
 		alert('Player 2 Wins!');
+		location.reload();
 		}
 
 	}
