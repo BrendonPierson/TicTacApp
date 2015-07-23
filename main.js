@@ -17,10 +17,10 @@ console.log("col 1: " + $col1);
 
 //add x class to td on click 
 $('td').click(function(){
-	if (turn === 'x') {
+	if (turn === 'x' ) {
 		$(this).addClass(' x');
 		turn = 'o';
-	} else {
+	} else if ($(this).hasClass('x') === false){
 		$(this).addClass(' o').removeClass(' x');
 		turn = 'x';
 	}
