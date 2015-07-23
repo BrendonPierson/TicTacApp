@@ -13,10 +13,12 @@ td {
 
 .x {
 	background-image: url('x.png');
+	background-size: cover;
 }
 
 .o {
 	background-image: url('circle.png');
+	background-size: cover;
 }
 
 /*tr:nth-child(2) > td:nth-child(2) {
