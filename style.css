@@ -1,6 +1,28 @@
+body {
+	background-color: #999;
+	color: #000;
+}
+
+#main-wrapper {
+	display: flex;
+}
+#title {
+	flex-grow:1;
+}
 table {
 	height: 500px;
 	width: 500px;
+	background-color: #AA3939;
+	border-radius: 3px;
+	flex-grow: 4;
+}
+
+button {
+	width: 70%;
+	height: 50px;
+	border-radius: 10px;
+	background-color: #FFAAAA;
+	font-size: 1.5em;
 }
 
 tr {
@@ -9,14 +31,17 @@ tr {
 
 td {
 	border: 1px solid black;
+	border-radius: 2px;
 }
 
 .x {
+	background-color: #7A9F35;
 	background-image: url('x.png');
 	background-size: cover;
 }
 
 .o {
+	background-color: #226666;
 	background-image: url('circle.png');
 	background-size: cover;
 }

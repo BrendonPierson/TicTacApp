@@ -7,6 +7,8 @@ var $row2 = $('.row2');
 var $row3 = $('.row3');
 var $diag1 = $('.diag1');
 var $diag2 = $('.diag2');
+var turn = 'x';
+
 
 ///an array of the win options
 var ArrWinOptions = [$col1, $col2, $col3, $row1, $row2, $row3, $diag1, $diag2];
@@ -15,15 +17,15 @@ console.log("col 1: " + $col1);
 
 //add x class to td on click 
 $('td').click(function(){
-	$(this).addClass(' x');
+	if (turn === 'x') {
+		$(this).addClass(' x');
+		turn = 'o';
+	} else {
+		$(this).addClass(' o').removeClass(' x');
+		turn = 'x';
+	}
 	checkForWin();
 })
-//add o class to td on doubl click 
-$('td').dblclick(function(){
-	$(this).addClass(' o').removeClass(' x');
-	checkForWin();
-})
-
 
 console.log("Full Array: " ,ArrWinOptions);
 console.log("ArrWinOptions first of the first" , ArrWinOptions[0][0])
@@ -42,18 +44,18 @@ function checkForWin(){
 			}
 		}
 		if (xCount === 3) {
-		alert('Player 1 Wins!');
-		location.reload();
+			alert('Player 1 Wins!');
+			location.reload();
 		} else if (yCount === 3) {
-		alert('Player 2 Wins!');
-		location.reload();
+			alert('Player 2 Wins!');
+			location.reload();
 		}
-
 	}
-	
 }
 
-
+$('button').click(function(){
+	location.reload();
+})
 
 
 
