@@ -11,6 +11,14 @@ td {
 	border: 1px solid black;
 }
 
+.x {
+	background-image: url('x.png');
+}
+
+.o {
+	background-image: url('circle.png');
+}
+
 /*tr:nth-child(2) > td:nth-child(2) {
 	border: 1px solid black;
 }

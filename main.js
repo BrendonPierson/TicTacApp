@@ -14,12 +14,16 @@ var ArrWinOptions = [$col1, $col2, $col3, $row1, $row2, $row3, $diag1, $diag2];
 //add x class to td on click 
 $('td').click(function(){
 	$(this).addClass(' x');
+	checkForWin();
 })
 //add o class to td on doubl click 
 $('td').dblclick(function(){
 	$(this).addClass(' o');
+	checkForWin();
 })
 
+
+console.log(ArrWinOptions);
 
 //takes an array of potential wins and tests to see if any 
 //of them have 3 of the x or o class by incrementing the xCount and yCount variables
