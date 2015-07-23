@@ -11,6 +11,8 @@ var $diag2 = $('.diag2');
 ///an array of the win options
 var ArrWinOptions = [$col1, $col2, $col3, $row1, $row2, $row3, $diag1, $diag2];
 
+console.log("col 1: " + $col1);
+
 //add x class to td on click 
 $('td').click(function(){
 	$(this).addClass(' x');
@@ -23,7 +25,8 @@ $('td').dblclick(function(){
 })
 
 
-console.log(ArrWinOptions);
+console.log("Full Array: " ,ArrWinOptions);
+console.log("ArrWinOptions first of the first" , ArrWinOptions[0][0])
 
 //takes an array of potential wins and tests to see if any 
 //of them have 3 of the x or o class by incrementing the xCount and yCount variables
@@ -32,16 +35,28 @@ function checkForWin(){
 		var xCount = 0;
 		var yCount = 0;
 		for (var j = 0; j < 4; j++) {
-			if (ArrWinOptions[i][j].hasClass('x')) {
+			if ($(ArrWinOptions[i][j]).hasClass('x')) {
 				xCount += 1;
-			} else if (ArrWinOptions[i][j].hasClass('o')) {
+			} else if ($(ArrWinOptions[i][j]).hasClass('o')) {
 				yCount += 1;
 			}
 		}
-	}
-	if (xCount === 3) {
+		if (xCount === 3) {
 		alert('Player 1 Wins!');
-	} else if (yCount === 3) {
-		alert('Player 1 Wins!');
+		} else if (yCount === 3) {
+		alert('Player 2 Wins!');
+		}
+
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
