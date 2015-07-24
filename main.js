@@ -40,7 +40,8 @@ $('#reset').click(resetScore);
 
 //////////FUNCTIONS//////////
 //takes an array of potential wins and tests to see if any 
-//of them have 3 of the x or o class by incrementing the xCount and yCount variables
+//of them have 3 of the x or o class by incrementing
+// the xCount and yCount variables
 function checkForWin(){
 	for(var i = 0; i < ArrWinOptions.length; i++) {
 		for (var j = 0; j < 4; j++) {
@@ -51,12 +52,12 @@ function checkForWin(){
 			}
 		}
 		if (xCount === 3) {
-			alert('Player 1 Wins!');
+			setMsg('Player 1');
 			p1Score += 1;
 			reset();
 			setScore();
 		} else if (yCount === 3) {
-			alert('Player 2 Wins!');
+			setMsg('Player 2');
 			p2Score += 1;
 			reset();
 			setScore();
@@ -106,6 +107,10 @@ function highlightLeader() {
 	}
 }
 
+
+function setMsg(player) {
+	$('#msg').html('<h2>' + player + ' Wins!</h2>')
+}
 // // styling set it to always be a square
 // if ($('table').width() < 500){
 // 	$('table').css('height', $('table').css('width'));	
