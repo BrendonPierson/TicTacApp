@@ -9,7 +9,9 @@ var $col1 = $('.col1');
 	$diag2 = $('.diag2'),
 	turn = 'x',
 	xCount = 0,
-	yCount = 0;	
+	yCount = 0,	
+	p1Score = 0,
+	p2Score = 0;
 
 ///an array of the win options
 var ArrWinOptions = [$col1, $col2, $col3, $row1, $row2, $row3, $diag1, $diag2];
@@ -39,19 +41,42 @@ function checkForWin(){
 		}
 		if (xCount === 3) {
 			alert('Player 1 Wins!');
-			location.reload();
+			p1Score += 1;
+			reset();
+			setScore();
 		} else if (yCount === 3) {
 			alert('Player 2 Wins!');
-			location.reload();
+			p2Score += 1;
+			reset();
+			setScore();
 		}
 		xCount = 0;
 		yCount = 0;
 	}
 }
 
+//reset function 
+function reset() {
+	for (var i = 0; i < 8; i++) {
+		for (var j = 0; j < 4; j++) {
+			if ($(ArrWinOptions[i][j]).hasClass('x')) {
+				$(ArrWinOptions[i][j]).removeClass('x');
+			} else if ($(ArrWinOptions[i][j]).hasClass('o')) {
+				$(ArrWinOptions[i][j]).removeClass('o');
+			}
+		}
+	}
+}
+
+//set score board
+function setScore() {
+	$('#p1score').html(p1Score);
+	$('#p2score').html(p2Score);
+}
+
 //Reset Button Reloads page
 $('button').click(function(){
-	location.reload();
+	reset()
 })
 
 

@@ -3,15 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<title>Tic Tac App</title>
+	<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div id="main-wrapper">
 		<div id="title">
-			<h1> Tic Tac App</h1>
-			<h3>Player 1 is X</h3>
-			<h3> Player 2 is O</h3>
-			<button type="button" id="reset" value='reset'>New Game</button>
+			<ul>
+				<li><h1>Tic Tac App</h1></li>
+				<li>
+					<h2 id="x">Player 1 is X</h2>
+					<p id="p1score">0</p>
+				</li>
+				<li>
+					<h2 id="o">Player 2 is O</h2>
+					<p id="p2score">0</p>
+				</li>
+			</ul>
+			
 		</div>
 		<!-- Begin of Tic Tac Board -->
 		
@@ -32,7 +41,7 @@
 				<td class="row3 col3 diag1"></td>
 			</tr>
 		</table>
-
+		<button type="button" id="reset" value='reset'>New Game</button>	
 
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
