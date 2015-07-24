@@ -72,6 +72,7 @@ function reset() {
 function setScore() {
 	$('#p1score').html(p1Score);
 	$('#p2score').html(p2Score);
+	highlightLeader();
 }
 
 //Reset Button removes classes
@@ -89,11 +90,23 @@ function resetScore() {
 	setScore();
 }
 
-// styling set it to always be a square
-if ($('table').width() < 500){
-	$('table').css('height', $('table').css('width'));	
-}
+// // styling set it to always be a square
+// if ($('table').width() < 500){
+// 	$('table').css('height', $('table').css('width'));	
+// }
 
+//border the winner
+function highlightLeader() {
+	if (p1Score > p2Score) {
+		$('#p1score').css('background-color','#FFE693');
+		$('#p2score').css('background-color','#336799');
+	} else if (p1Score < p2Score) {
+		$('#p2score').css('background-color','#FFE693');
+		$('#p1score').css('background-color','#336799');
+	} else {
+		$('p').css('background-color','#336799');
+	}
+}
 
 
 
