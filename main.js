@@ -1,4 +1,5 @@
-////jQuery Selectors for all potential win rows
+//////////VARIABLES//////////
+//jQuery Selectors for all potential win rows
 var $col1 = $('.col1');
 	$col2 = $('.col2'),
 	$col3 = $('.col3'),
@@ -16,6 +17,7 @@ var $col1 = $('.col1');
 ///an array of the win options
 var ArrWinOptions = [$col1, $col2, $col3, $row1, $row2, $row3, $diag1, $diag2];
 
+//////////EVENTS//////////
 //add x or o class to td on click 
 $('td').click(function(){
 	if (turn === 'x' ) {
@@ -28,6 +30,15 @@ $('td').click(function(){
 	checkForWin();
 })
 
+//Reset Button removes classes
+$('#newGame').click(function(){
+	reset()
+})
+
+// Reset scoreboard
+$('#reset').click(resetScore);
+
+//////////FUNCTIONS//////////
 //takes an array of potential wins and tests to see if any 
 //of them have 3 of the x or o class by incrementing the xCount and yCount variables
 function checkForWin(){
@@ -75,25 +86,12 @@ function setScore() {
 	highlightLeader();
 }
 
-//Reset Button removes classes
-$('#newGame').click(function(){
-	reset()
-})
-
-// Reset scoreboard
-$('#reset').click(resetScore);
-
 // reset score board 
 function resetScore() {
 	p1Score = 0;
 	p2Score = 0;
 	setScore();
 }
-
-// // styling set it to always be a square
-// if ($('table').width() < 500){
-// 	$('table').css('height', $('table').css('width'));	
-// }
 
 //border the winner
 function highlightLeader() {
@@ -108,6 +106,10 @@ function highlightLeader() {
 	}
 }
 
+// // styling set it to always be a square
+// if ($('table').width() < 500){
+// 	$('table').css('height', $('table').css('width'));	
+// }
 
 
 
