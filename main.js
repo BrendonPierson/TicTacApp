@@ -74,10 +74,25 @@ function setScore() {
 	$('#p2score').html(p2Score);
 }
 
-//Reset Button Reloads page
-$('button').click(function(){
+//Reset Button removes classes
+$('#newGame').click(function(){
 	reset()
 })
+
+// Reset scoreboard
+$('#reset').click(resetScore);
+
+// reset score board 
+function resetScore() {
+	p1Score = 0;
+	p2Score = 0;
+	setScore();
+}
+
+// styling set it to always be a square
+if ($('table').width() < 500){
+	$('table').css('height', $('table').css('width'));	
+}
 
 
 
