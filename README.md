@@ -1,4 +1,4 @@
-# Tic Tac App
+#NSS Group Project: Tic Tac App
 ## This is a rendition of the classic game using basic html, css, and jQuery.
 
 #### Features
